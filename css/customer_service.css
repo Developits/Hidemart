@@ -1,0 +1,279 @@
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+.customer-support {
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.header p {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  grid-template-rows: auto;     /* Adjust height automatically */
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.image-container {
+  grid-column: 1 / 2; /* Place image on the left side */
+}
+
+.image-container img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.details {
+  display: grid;
+  grid-template-rows: repeat(3, auto); /* Three rows for Address, Email, and Phone */
+  grid-column: 2 / 3; /* Place details on the right side */
+  gap: 20px;
+}
+
+.grid-item {
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 30px;
+  margin-right: 15px;
+  color: #00bcd4;
+}
+
+.grid-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.grid-item p {
+  margin: 0;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .grid {
+      grid-template-columns: 1fr; /* Stack columns vertically */
+  }
+
+  .image-container {
+      grid-column: 1 / 2; /* Reset image placement */
+  }
+}
+
+/* FAQ section */
+
+.faq-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #444;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  font-size: 14px;
+  color: #555;
+  padding-left: 10px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 100px; /* Set sufficient height for the answer */
+}
+
+.faq-item.active .toggle-button {
+  transform: rotate(180deg); /* Rotate arrow when active */
+}
+
+
+/* form section */
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 40px;
+}
+
+.left-section {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.left-section h2, .left-section h3 {
+  color: #00bcd4;
+  margin-bottom: 10px;
+}
+
+.left-section p {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.awards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.awards img {
+  max-height: 100px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.right-section {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.right-section h2, .right-section h3 {
+  text-align: center;
+  color: #00bcd4;
+  margin-bottom: 10px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+input, select {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ddd;
+  color: #333;
+}
+
+input::placeholder {
+  color: #777;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #019aa1;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  top: 20px; /* Position at the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust position to center the element */
+  background: #00bcd4;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+}
